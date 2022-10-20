@@ -21,7 +21,7 @@ Make sure you are logged in (gcloud auth login), and you have set your project (
 
 ##### Download & make executable:
 ```
-curl https://github.com/nocyber/gdate/blob/main/gdate.sh > gdate && chmod +x ./gdate
+curl https://github.com/nocyber/gdate/blob/main/gdate.sh > gdate; chmod +x ./gdate
 ./gdate
 ```
 
