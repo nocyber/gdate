@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
-VERSION='v0.91.5'
+VERSION='v0.91.6'
 
 # To add a zone,
 # 1) use "timedatectl list-timezones" to find a timezone.
 # 2) add a name entry in the "NAME" array. (Can be anything)
 # 3) add the Unix city or timezone code you found in step 1 into the "TIMEZONE" array.
-# (The NAME and TIMEZONE arrays have to be in the same order))
+# (The NAME and TIMEZONE arrays have to be in the same order)
 
 
 
@@ -69,12 +69,13 @@ TIMEZONE=( \
 usage(){
   echo -e "Usage:"
   printf "%-35b %b\n" "${T}- Hide commands [-n]:" "${C}${0} -n${X}"
-  printf "%-35b %b\n" "${T}- Show more commands [-m]:" "${C}${0} -n${X}"
+  printf "%-35b %b\n" "${T}- Show more commands [-m]:" "${C}${0} -m${X}"
   printf "%-35b %b\n" "${T}- Refresh once a minute:"  "${C}watch -c -n 60 \"${0} -n\"${X}"
   printf "%-35b %b\n" "${T}- Local date:"     "${C}date${X}"
 }
 
-# Start program
+
+## Start program
 # Show or hide calculations
 PRINT_CALC='1'               # Show Calculations
 while getopts ":hnmv" opt; do
@@ -124,7 +125,6 @@ print_calculation_function(){
     printf "%-60s %s\n" 'TZ=EST date -d "14:00 IST"'                          "# IST to EST"
     printf "%-60s %s\n" 'TZ=EDT4 date -d "2:00 pm IST"'                       "# IST to EDT"
     printf "%-60s %s\n" 'TZ=America/New_York date -d "1 Aug 2022 14:00 IST"'  "# IST to local Montreal time, (and optional date)"
-
 }
 
 
