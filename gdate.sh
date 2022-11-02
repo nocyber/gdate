@@ -12,9 +12,9 @@
 CURRENT_CITY='Montréal'                           # Any Name
 CURRENT_TIMEZONE[0]='America/New_York'            # ET  / Unix Timezone
 CURRENT_TIMEZONE[1]='EST'                         # EST / Unix Timezone
-CURRENT_TIMEZONE[2]='EDT4'                         # EDT / Unix Timezone
+CURRENT_TIMEZONE[2]='EDT4'                        # EDT / Unix Timezone
 NEXT_TZ_CHANGE[0]="Next Local Time change: [EDT(UTC-4) -> EST(UTC-5)]"      # This message does not automatically change
-NEXT_TZ_CHANGE[1]='Sun Nov  6, 02:00:00 AM EDT'                        # This message does not automatically change
+NEXT_TZ_CHANGE[1]='Sun Nov  6, 02:00:00 AM EDT'                             # This message does not automatically change
 
 # Colors
 #### 8-bit ANSI color codes reference:
@@ -123,10 +123,17 @@ print_calculation_function(){
 
 print_extrainfo_function(){
   echo
-  printf "%-35b %b\n" "${T}To see the local date:"     "${C}date${X}"
-  printf "%-35b %b\n" "${T}To see a list of cities:"   "${C}timedatectl list-timezones${X}"
   printf "%-35b %b\n" "${T}Hide commands (-n option):" "${C}${0} -n${X}"
   printf "%-35b %b\n" "${T}To refresh once a minute:"  "${C}watch -c -n 60 \"${0} -n\"${X}"
+  printf "%-35b %b\n" "${T}To see the local date:"     "${C}date${X}"
+  
+
+  echo "This script is easy to adjust:"
+  echo "1) Simply add or remove names of cities from the \"TIMEZONE\" varible"
+  printf "%-35b %b\n" "${T}To see a list of cities:"   "${C}timedatectl list-timezones | more${X}"
+  echo "2) and add or remove the corresponding entry in the \"NAME\" array."
+  echo "The \"NAME\" entry can be any name."
+  
 }
 
 
