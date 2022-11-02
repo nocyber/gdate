@@ -90,7 +90,7 @@ done
 
 
 # Header
-printf "%-60b %-10b\n"  "${T}Location:"                               "${T}$CURRENT_CITY"
+printf "%-59b %-10b\n"  "${T}Location:"                               "${T}${CURRENT_CITY}"   # 1 character offset due to color
 printf "%-60b %-10b\n"  "${M}Current time:"                           "$(TZ=${CURRENT_TIMEZONE[0]} date)"
 #echo
 printf "%-60b %-10b\n"  "${P}${NEXT_TZ_CHANGE[0]}" "${P}${NEXT_TZ_CHANGE[1]}"
@@ -102,7 +102,7 @@ echo -e "${BAR}"
 
 
 # Timezones display
-printf "%-65b %-20b %s\n"  "${T}Name          ${P}(Yellow+Red = DST in summer)" "${T}(Unix location)" "TIME"
+printf "%-65b %-20b %b\n"  "${T}Name          ${P}(Yellow+Red = DST in summer)" "${T}(Unix location)" "TIME"
 i=0
 while [ $i -lt "${#NAME[@]}" ]; do
     printf "%-65b %-20s %s\n"  "${NAME[$i]}" "${TIMEZONE[$i]}" "$(TZ=${TIMEZONE[$i]} date)"
