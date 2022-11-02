@@ -1,42 +1,47 @@
+
+![gdate_pic](https://user-images.githubusercontent.com/87066300/199491157-2b0fc275-0ff0-40a5-b611-ea4a986a0e6b.png)
+
 # gdate
 
-#### gdate gives bla bla bla
-The script originally was part of a series of [manual lists of commands](qnd_kubed_commands.md) made to copy into the shell. It was designed to be quick, but polluted the shell history with excessive commenting.
+#### gdate provides a simple dashboard to get detailed time information.
+  1) Provides Local, Standard, and Daylight time for the current city (set to Montreal by default) 
+  2) Provides a World Clock of various cities, showing about half the World timezones.
+  3) Displays syntax examples for quick Timezone calculations.
 
-bla bla bla:
-  1. create a zonal cluster (and tell you the duration of time it took).
-  2. deploy 3 Hello World containers.
-  3. check the containers with the curl command
-  4. offers to create a script to be used later to delete the container and the cluster, saving resources.
-
-bla bla bla:
-  - install a custom yaml script (which cancels the Hello World deployment)
-  - install a second container called Keycloak
-  - change cluster zone, or make a regional cluster
-  - let you choose machine types
-  - for more: `./qnd_kubed -h`
 
 ## Installation
-Make sure you are logged in (gcloud auth login), and you have set your project (gcloud config set project <project>)
+This can be used in your local terminal.
 
-##### Download & make executable:
+#### Download & make executable:
 ```
 curl https://raw.githubusercontent.com/nocyber/gdate/main/gdate.sh > ./gdate && chmod +x ./gdate
+```
+
+#### Run:
+```
 ./gdate
 ```
 
-## Usage
+## Options:
 ```
-./andbdused                     # execut
-./qnd_kubed -a "teacup" -K      # name the
+./gdate -n                      # no commands, only clocks
+./gdate -m                      # more commands, how to list cities, etc....
 ```
 
----
+#### Live clock
+- Display only clocks[./gdate -n], in color [-c], and refresh every 60 seconds[-n 60].
+- (Press [ctrl-c] to quit)
+```
+watch -c -n 60 "./gdate -n"
+```
+
+
+![gdate_default](https://user-images.githubusercontent.com/87066300/199492029-d3a6957b-e1bd-49f8-95b2-3b3969cb2a88.png)
+
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-Please make sure to update tests as appropriate.
 
 ## License
 [GNE GPLv2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
