@@ -130,9 +130,9 @@ print_extrainfo_function(){
 
   echo -e "\n# This script is easy to adjust:"
   echo "1) Simply add or remove names of cities from the \"TIMEZONE\" varible"
-  printf "%-35b %b\n" "${T}To see a list of cities:"   "${C}timedatectl list-timezones | more${X}"
+  printf "%-35b %b\n" "${T}   - To see a list of cities:"   "${C}timedatectl list-timezones | more${X}"
   echo "2) and add or remove the corresponding entry in the \"NAME\" array."
-  echo "The \"NAME\" entry can be any name."
+  echo "   - The \"NAME\" entry can be any name."
   
 }
 
