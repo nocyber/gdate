@@ -14,7 +14,7 @@ CURRENT_TIMEZONE[0]='America/New_York'            # ET  / Unix Timezone
 CURRENT_TIMEZONE[1]='EST'                         # EST / Unix Timezone
 CURRENT_TIMEZONE[2]='EDT4'                        # EDT / Unix Timezone
 NEXT_TZ_CHANGE[0]="Next Local Time change: [EDT(UTC-4) -> EST(UTC-5)]"      # This message does not automatically change
-NEXT_TZ_CHANGE[1]='Sun Nov  6, 02:00:00 AM EDT'                             # This message does not automatically change
+NEXT_TZ_CHANGE[1]='Sun Nov  6 02:00:00 AM EDT 2022'                             # This message does not automatically change
 
 # Colors
 #### 8-bit ANSI color codes reference:
