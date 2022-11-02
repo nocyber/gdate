@@ -66,15 +66,23 @@ TIMEZONE=( \
 )
 
 
+usage(){
+  echo -e "Usage:"
+  printf "%-35b %b\n" "${T}- Hide commands (-n option):" "${C}${0} -n${X}"
+  printf "%-35b %b\n" "${T}- Show more commands (-m option):" "${C}${0} -n${X}"
+  printf "%-35b %b\n" "${T}- To refresh once a minute:"  "${C}watch -c -n 60 \"${0} -n\"${X}"
+  printf "%-35b %b\n" "${T}- To see the local date:"     "${C}date${X}"
+}
 
 # Start program
 # Show or hide calculations
 PRINT_CALC='1'               # Show Calculations
 while getopts ":hnmv" opt; do
    case "${opt}" in
-     v) echo "gdate version: ${VERSION}"; exit 0;;  # version
-     n) PRINT_CALC='0';;                            # Hide calculations with "-n" option
-   h|m) clear; PRINT_CALC='2';;                            # extra info with "-m" option
+     v) echo "gdate version: ${VERSION}" && exit 0;;  # version
+     h) usage && exit 0;;                             # usage / help
+     n) PRINT_CALC='0';;                              # Hide calculations with "-n" option
+     m) clear; PRINT_CALC='2';;                              # extra info with "-m" option
      *) ;;
    esac
 done
@@ -119,22 +127,17 @@ print_calculation_function(){
 
 }
 
-print_extrainfo_function(){
-  echo -e "${BAR}Examples:"
-  printf "%-35b %b\n" "${T}- Hide commands (-n option):" "${C}${0} -n${X}"
-  printf "%-35b %b\n" "${T}- To refresh once a minute:"  "${C}watch -c -n 60 \"${0} -n\"${X}"
-  printf "%-35b %b\n" "${T}- To see the local date:"     "${C}date${X}"
-  
 
+
+how_to_adjust(){
   echo -e "\nThis script is easy to adjust:"
   echo "1) Simply add or remove names of cities from the \"TIMEZONE\" varible"
   printf "%-35b %b\n" "${T}   - To see a list of cities:"   "${C}timedatectl list-timezones | more${X}"
   echo "2) and add or remove the corresponding entry in the \"NAME\" array."
   echo "   - The \"NAME\" entry can be any name."
-  
 }
 
 
 [ "${PRINT_CALC}" -ge '1' ] && print_calculation_function
 [ "${PRINT_CALC}" == '1' ] && echo -e "${P}|==> No time/date commands (-n option)   |==>   more information (-m option)${C}"
-[ "${PRINT_CALC}" == '2' ] && print_extrainfo_function
+[ "${PRINT_CALC}" == '2' ] && echo -e "${BAR}" && usage && how_to_adjust
