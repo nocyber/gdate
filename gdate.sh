@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-VERSION='v0.91.6'
+VERSION='v0.91.7'
 
 # To add a zone,
 # 1) use "timedatectl list-timezones" to find a timezone.
@@ -32,7 +32,7 @@ BAR='\e[0m----------------------------------------------------------------------
 
 # Variables
 NAME=( \
-"${D}""Sydney, Australia" \
+"${D}""Sydney, Australia  [south hemisphere, DST starts in Oct]" \
 "${S}"'UTC+9    Japan (no DST)' \
 "${S}"'UTC+8:   China/HK, Singapore, Philipines (no DST)' \
 "${S}"'UTC+5.5: India  (no DST)' \
@@ -102,7 +102,7 @@ echo -e "${BAR}"
 
 
 # Timezones display
-printf "%-65b %-20s %s\n"  "${T}Name  (Yellow+Red = DST in summer)" "(Unix location)" "TIME"
+printf "%-65b %-20b %s\n"  "${T}Name          ${P}(Yellow+Red = DST in summer)" "${T}(Unix location)" "TIME"
 i=0
 while [ $i -lt "${#NAME[@]}" ]; do
     printf "%-65b %-20s %s\n"  "${NAME[$i]}" "${TIMEZONE[$i]}" "$(TZ=${TIMEZONE[$i]} date)"
