@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# v0.90
+VERSION='v0.91'
 
 # To add a zone,
 # 1) use "timedatectl list-timezones" to find a timezone.
@@ -70,17 +70,17 @@ TIMEZONE=( \
 # Start program
 # Show or hide calculations
 PRINT_CALC='1'               # Show Calculations
-while getopts ":nm" opt; do
+while getopts ":hnmv" opt; do
    case "${opt}" in
-     n) PRINT_CALC='0';;     # Hide calculations with "-n" option
-     m) clear; PRINT_CALC='2';;     # extra info with "-m" option
+     v) echo "gdate version: ${VERSION}"; exit 0;;  # version
+     n) PRINT_CALC='0';;                            # Hide calculations with "-n" option
+   h|m) clear; PRINT_CALC='2';;                            # extra info with "-m" option
      *) ;;
    esac
 done
 
 
 # Header
-
 printf "%-60b %-10b\n"  "${T}Location:"                               "${T}$CURRENT_CITY"
 printf "%-60b %-10b\n"  "${M}Current time:"                           "$(TZ=${CURRENT_TIMEZONE[0]} date)"
 #echo
@@ -120,13 +120,13 @@ print_calculation_function(){
 }
 
 print_extrainfo_function(){
-  echo -e "${BAR}\n"
+  echo -e "${BAR}Examples:"
   printf "%-35b %b\n" "${T}- Hide commands (-n option):" "${C}${0} -n${X}"
   printf "%-35b %b\n" "${T}- To refresh once a minute:"  "${C}watch -c -n 60 \"${0} -n\"${X}"
   printf "%-35b %b\n" "${T}- To see the local date:"     "${C}date${X}"
   
 
-  echo -e "\n# This script is easy to adjust:"
+  echo -e "\nThis script is easy to adjust:"
   echo "1) Simply add or remove names of cities from the \"TIMEZONE\" varible"
   printf "%-35b %b\n" "${T}   - To see a list of cities:"   "${C}timedatectl list-timezones | more${X}"
   echo "2) and add or remove the corresponding entry in the \"NAME\" array."
