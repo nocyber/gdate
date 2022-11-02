@@ -13,7 +13,7 @@ CURRENT_CITY='Montréal'                           # Any Name
 CURRENT_TIMEZONE[0]='America/New_York'            # ET  / Unix Timezone
 CURRENT_TIMEZONE[1]='EST'                         # EST / Unix Timezone
 CURRENT_TIMEZONE[2]='EDT4'                         # EDT / Unix Timezone
-NEXT_TZ_CHANGE[0]="Next Local Time change: [EDT(GMT-4) -> EST(GMT-5)]"      # This message does not automatically change
+NEXT_TZ_CHANGE[0]="Next Local Time change: [EDT(UTC-4) -> EST(UTC-5)]"      # This message does not automatically change
 NEXT_TZ_CHANGE[1]='Sunday, November 6, 2:00 am'                        # This message does not automatically change
 
 # Colors
