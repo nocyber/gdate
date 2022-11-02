@@ -22,8 +22,8 @@ curl https://raw.githubusercontent.com/nocyber/gdate/main/gdate.sh > ./gdate && 
 ./gdate
 ```
 
+![gdate2_v0 96](https://user-images.githubusercontent.com/87066300/199619017-5da0165d-34cc-4749-93c7-000fc94bb2ad.png)
 
-![gdate_default](https://user-images.githubusercontent.com/87066300/199492029-d3a6957b-e1bd-49f8-95b2-3b3969cb2a88.png)
 
 ---
 
