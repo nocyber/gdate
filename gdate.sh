@@ -88,8 +88,6 @@ printf "%-60b %-10b\n"  "${P}${NEXT_TZ_CHANGE[0]}" "${P}${NEXT_TZ_CHANGE[1]}"
 #printf "%-20b %-38b %-20b %b\n" "${S}DAYLIGHT TIME:" "$(TZ=${CURRENT_TIMEZONE[2]} date +'%r %Z')" "${S}STANDARD TIME:" "$(TZ=${CURRENT_TIMEZONE[1]} date +'%r %Z')"
 printf "%-20b %b\n" "${S}DAYLIGHT TIME:" "$(TZ=${CURRENT_TIMEZONE[2]} date +'%r %Z')"
 printf "%-20b %b\n" "${S}STANDARD TIME:" "$(TZ=${CURRENT_TIMEZONE[1]} date +'%r %Z')"
-
-
 echo -e "${BAR}"
 
 
@@ -122,7 +120,7 @@ print_calculation_function(){
 }
 
 print_extrainfo_function(){
-  echo
+  echo -e "${BAR}\n"
   printf "%-35b %b\n" "${T}- Hide commands (-n option):" "${C}${0} -n${X}"
   printf "%-35b %b\n" "${T}- To refresh once a minute:"  "${C}watch -c -n 60 \"${0} -n\"${X}"
   printf "%-35b %b\n" "${T}- To see the local date:"     "${C}date${X}"
