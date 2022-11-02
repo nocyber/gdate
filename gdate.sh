@@ -123,12 +123,12 @@ print_calculation_function(){
 
 print_extrainfo_function(){
   echo
-  printf "%-35b %b\n" "${T}Hide commands (-n option):" "${C}${0} -n${X}"
-  printf "%-35b %b\n" "${T}To refresh once a minute:"  "${C}watch -c -n 60 \"${0} -n\"${X}"
-  printf "%-35b %b\n" "${T}To see the local date:"     "${C}date${X}"
+  printf "%-35b %b\n" "${T}- Hide commands (-n option):" "${C}${0} -n${X}"
+  printf "%-35b %b\n" "${T}- To refresh once a minute:"  "${C}watch -c -n 60 \"${0} -n\"${X}"
+  printf "%-35b %b\n" "${T}- To see the local date:"     "${C}date${X}"
   
 
-  echo "This script is easy to adjust:"
+  echo -e "\n# This script is easy to adjust:"
   echo "1) Simply add or remove names of cities from the \"TIMEZONE\" varible"
   printf "%-35b %b\n" "${T}To see a list of cities:"   "${C}timedatectl list-timezones | more${X}"
   echo "2) and add or remove the corresponding entry in the \"NAME\" array."
