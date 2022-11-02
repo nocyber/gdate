@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-VERSION='v0.91'
+VERSION='v0.91.5'
 
 # To add a zone,
 # 1) use "timedatectl list-timezones" to find a timezone.
@@ -68,10 +68,10 @@ TIMEZONE=( \
 
 usage(){
   echo -e "Usage:"
-  printf "%-35b %b\n" "${T}- Hide commands (-n option):" "${C}${0} -n${X}"
-  printf "%-35b %b\n" "${T}- Show more commands (-m option):" "${C}${0} -n${X}"
-  printf "%-35b %b\n" "${T}- To refresh once a minute:"  "${C}watch -c -n 60 \"${0} -n\"${X}"
-  printf "%-35b %b\n" "${T}- To see the local date:"     "${C}date${X}"
+  printf "%-35b %b\n" "${T}- Hide commands [-n]:" "${C}${0} -n${X}"
+  printf "%-35b %b\n" "${T}- Show more commands [-m]:" "${C}${0} -n${X}"
+  printf "%-35b %b\n" "${T}- Refresh once a minute:"  "${C}watch -c -n 60 \"${0} -n\"${X}"
+  printf "%-35b %b\n" "${T}- Local date:"     "${C}date${X}"
 }
 
 # Start program
