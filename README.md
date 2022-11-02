@@ -14,7 +14,7 @@ This can be used in your local terminal.
 
 #### Download & make executable:
 ```
-curl https://raw.githubusercontent.com/nocyber/gdate/main/gdate.sh > ./gdate && chmod +x ./gdate
+curl https://raw.githubusercontent.com/nocyber/gdate/main/gdate.sh > ./gdate && chmod u+x ./gdate
 ```
 
 #### Run:
