@@ -102,7 +102,7 @@ echo -e "${BAR}"
 
 
 # Timezones display
-printf "%-65b %-20s %s\n"  "${T}Name" "(Unix location)" "TIME"
+printf "%-65b %-20s %s\n"  "${T}Name  (Yellow+Red = DST in summer)" "(Unix location)" "TIME"
 i=0
 while [ $i -lt "${#NAME[@]}" ]; do
     printf "%-65b %-20s %s\n"  "${NAME[$i]}" "${TIMEZONE[$i]}" "$(TZ=${TIMEZONE[$i]} date)"
