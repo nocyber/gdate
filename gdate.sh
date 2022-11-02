@@ -32,7 +32,7 @@ BAR='\e[0m----------------------------------------------------------------------
 
 # Variables
 NAME=( \
-"${D}""Sydney, Australia  [south hemisphere, DST starts in Oct]" \
+"${D}""Sydney, Australia  [Spring=Sept 21, DST starts in Oct.]" \
 "${S}"'UTC+9    Japan (no DST)' \
 "${S}"'UTC+8:   China/HK, Singapore, Philipines (no DST)' \
 "${S}"'UTC+5.5: India  (no DST)' \
