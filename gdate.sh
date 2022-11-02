@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-VERSION='v0.91.7'
+VERSION='v0.91.8'
 
 # To add a zone,
 # 1) use "timedatectl list-timezones" to find a timezone.
@@ -78,6 +78,9 @@ usage(){
 ## Start program
 # Show or hide calculations
 PRINT_CALC='1'               # Show Calculations
+
+
+# Getops
 while getopts ":hnmv" opt; do
    case "${opt}" in
      v) echo "gdate version: ${VERSION}" && exit 0;;  # version
@@ -102,7 +105,7 @@ echo -e "${BAR}"
 
 
 # Timezones display
-printf "%-65b %-20b %b\n"  "${T}Name          ${P}(Yellow+Red = DST in summer)" "${T}(Unix location)" "TIME"
+printf "%-72b %-40b %b\n"  "${T}Name                 ${P}(Yellow+Red = DST in summer)"  "${T}(Unix location)"  "TIME"
 i=0
 while [ $i -lt "${#NAME[@]}" ]; do
     printf "%-65b %-20s %s\n"  "${NAME[$i]}" "${TIMEZONE[$i]}" "$(TZ=${TIMEZONE[$i]} date)"
