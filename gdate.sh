@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-VERSION='v0.91.8'
+VERSION='v0.91.9'
 
 # To add a zone,
 # 1) use "timedatectl list-timezones" to find a timezone.
@@ -67,7 +67,7 @@ TIMEZONE=( \
 
 
 usage(){
-  echo -e "Usage:"
+  echo -e "Usage [-h]:"
   printf "%-35b %b\n" "${T}- Hide commands [-n]:" "${C}${0} -n${X}"
   printf "%-35b %b\n" "${T}- Show more commands [-m]:" "${C}${0} -m${X}"
   printf "%-35b %b\n" "${T}- Refresh once a minute:"  "${C}watch -c -n 60 \"${0} -n\"${X}"
@@ -76,7 +76,7 @@ usage(){
 
 
 ## Start program
-# Show or hide calculations
+# Show or hide calculations [ 0 = minimal, 1 = default, 2 = extended]
 PRINT_CALC='1'               # Show Calculations
 
 
@@ -98,14 +98,13 @@ printf "%-60b %-10b\n"  "${M}Current time:"                           "$(TZ=${CU
 #echo
 printf "%-60b %-10b\n"  "${P}${NEXT_TZ_CHANGE[0]}" "${P}${NEXT_TZ_CHANGE[1]}"
 #printf "%-20b %-38b %-20b %b\n" "${S}DAYLIGHT TIME:" "$(TZ=${CURRENT_TIMEZONE[2]} date +'%r %Z')" "${S}STANDARD TIME:" "$(TZ=${CURRENT_TIMEZONE[1]} date +'%r %Z')"
-printf "%-20b %b\n" "${S}DAYLIGHT TIME:" "$(TZ=${CURRENT_TIMEZONE[2]} date +'%r %Z')"
 printf "%-20b %b\n" "${S}STANDARD TIME:" "$(TZ=${CURRENT_TIMEZONE[1]} date +'%r %Z')"
+printf "%-20b %b\n" "${S}DAYLIGHT TIME:" "$(TZ=${CURRENT_TIMEZONE[2]} date +'%r %Z')"
 echo -e "${BAR}"
 
 
-
-# Timezones display
-printf "%-72b %-40b %b\n"  "${T}Name                 ${P}(Yellow+Red = DST in summer)"  "${T}(Unix location)"  "TIME"
+# World Timezones display
+printf "%-73b %-40b %b\n"  "${T}Name                 ${P}(Yellow+Red = DST in summer)"  "${T}(Unix location)"  "TIME"
 i=0
 while [ $i -lt "${#NAME[@]}" ]; do
     printf "%-65b %-20s %s\n"  "${NAME[$i]}" "${TIMEZONE[$i]}" "$(TZ=${TIMEZONE[$i]} date)"
@@ -114,6 +113,7 @@ done
 echo -e "${BAR}"
 
 
+# Default features:
 
 # Date Calculation examples
 print_calculation_function(){
@@ -131,7 +131,7 @@ print_calculation_function(){
 }
 
 
-
+# Extended features [-m]:
 how_to_adjust(){
   echo -e "\nThis script is easy to adjust:"
   echo "1) Simply add or remove names of cities from the \"TIMEZONE\" varible"
