@@ -34,7 +34,7 @@ curl https://raw.githubusercontent.com/nocyber/gdate/main/gdate.sh > ./gdate && 
 ```
 
 ## Live clock
-- Display only clocks[./gdate -n], in color [-c], and refresh every 60 seconds[-n 60].
+- Display only clocks[./gdate -m], in color [-c], and refresh every 60 seconds[-n 60].
 - (Press [ctrl-c] to quit)
 ```
 watch -c -n 60 "./gdate -m"
