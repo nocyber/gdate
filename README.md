@@ -29,15 +29,15 @@ curl https://raw.githubusercontent.com/nocyber/gdate/main/gdate.sh > ./gdate && 
 
 ## Options:
 ```
-./gdate -n                      # no commands, only clocks
-./gdate -m                      # more commands, how to list cities, etc....
+./gdate -m                      # no commands, only clocks
+./gdate -x                      # more commands, how to list cities, etc....
 ```
 
 ## Live clock
 - Display only clocks[./gdate -n], in color [-c], and refresh every 60 seconds[-n 60].
 - (Press [ctrl-c] to quit)
 ```
-watch -c -n 60 "./gdate -n"
+watch -c -n 60 "./gdate -m"
 ```
 
 
